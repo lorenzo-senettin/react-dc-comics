@@ -1,8 +1,18 @@
+import React from "react";
+import comics from "../data/comics.js";
+
 export default function Main() {
   return (
     <main className="main">
       <div className="content-container">
-        <h2>CONTENT</h2>
+        <div className="comics-cards-container">
+          {comics.map((comic, index) => (
+            <div className="comic-card" key={index}>
+              <img src={comic.thumb} alt={comic.title} />
+              <p>{comic.title}</p>
+            </div>
+          ))}
+        </div>
       </div>
       <div className="feature-menu">
         <ul>
